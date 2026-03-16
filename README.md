@@ -1,1 +1,316 @@
-# Senim-2.0
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENIM — Безопасность и Тарифы</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #050a14;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .phone-stack {
+            position: relative;
+            height: 600px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-mockup {
+            width: 280px;
+            height: 580px;
+            background: #000;
+            border: 12px solid #1a1a1a;
+            border-radius: 44px;
+            position: absolute;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.8);
+            overflow: hidden;
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .phone-1 { transform: translateX(-140px) rotate(-10deg) scale(0.85); z-index: 10; opacity: 0.4; }
+        .phone-2 { transform: translateX(140px) rotate(10deg) scale(0.85); z-index: 10; opacity: 0.4; }
+        .phone-main { transform: translateZ(0) scale(1.0); z-index: 30; }
+
+        .app-screen {
+            width: 100%;
+            height: 100%;
+            background: #fdfbf7;
+            color: #0a2540;
+            padding: 40px 20px 20px;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px;
+            border-radius: 20px;
+            z-index: 40;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            border-color: #4f46e5;
+            background: rgba(79, 70, 229, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .trust-badge {
+            background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow top-[-10%] left-[-10%]"></div>
+    <div class="glow top-[40%] right-[-10%]"></div>
+
+    <!-- Nav -->
+    <nav class="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center relative z-50">
+        <div class="text-2xl font-extrabold tracking-tighter flex items-center space-x-2">
+            <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+                <i class="fas fa-s text-white text-xs"></i>
+            </div>
+            <span>SENIM</span>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-semibold text-gray-400">
+            <a href="#features" class="hover:text-white transition">Безопасность</a>
+            <a href="#trust" class="hover:text-white transition">Доверие</a>
+            <a href="#pricing" class="hover:text-white transition">Тарифы</a>
+        </div>
+        <button class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2.5 rounded-full text-sm font-bold transition">
+            Создать сделку
+        </button>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-6 pt-12 pb-32">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="inline-block bg-indigo-600/10 text-indigo-400 text-xs font-bold px-4 py-2 rounded-full mb-6 border border-indigo-600/20">
+                    ESCROW-СЕРВИС №1 В КАЗАХСТАНЕ
+                </span>
+                <h1 class="text-6xl md:text-7xl font-black mb-8 leading-[1.1] gradient-text">
+                    Ваши деньги <br>под <span class="text-indigo-500 text-glow">Hold</span> защитой
+                </h1>
+                <p class="text-xl text-gray-400 mb-10 leading-relaxed max-w-lg">
+                    Мы создали «цифровой щит» для ваших покупок. Продавец получит оплату только тогда, когда вы подтвердите получение товара.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="bg-white text-black px-10 py-5 rounded-2xl font-black text-lg hover:scale-105 transition-transform">
+                        Попробовать бесплатно
+                    </button>
+                    <div class="flex items-center space-x-4 px-6">
+                        <div class="flex -space-x-3">
+                            <div class="w-10 h-10 rounded-full border-2 border-[#050a14] bg-gray-600 flex items-center justify-center text-[10px]">A</div>
+                            <div class="w-10 h-10 rounded-full border-2 border-[#050a14] bg-indigo-600 flex items-center justify-center text-[10px]">S</div>
+                            <div class="w-10 h-10 rounded-full border-2 border-[#050a14] bg-amber-600 flex items-center justify-center text-[10px]">K</div>
+                        </div>
+                        <span class="text-sm text-gray-400 font-medium">10k+ защищенных сделок</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phone-stack scale-90 lg:scale-100">
+                <div class="floating-card top-10 left-0">
+                    <i class="fas fa-shield-alt text-indigo-400 mb-2"></i>
+                    <div class="text-[10px] text-gray-500 font-bold">SMART CONTRACT</div>
+                    <div class="text-sm font-bold">Договор активен</div>
+                </div>
+                <div class="phone-mockup phone-1"></div>
+                <div class="phone-mockup phone-2"></div>
+                <div class="phone-mockup phone-main">
+                    <div class="app-screen">
+                        <div class="flex justify-between items-center mb-10">
+                            <div class="font-black text-xl">SENIM</div>
+                            <i class="fas fa-bell text-gray-300"></i>
+                        </div>
+                        <div class="bg-indigo-600 rounded-3xl p-6 text-white mb-8 shadow-xl shadow-indigo-200">
+                            <div class="text-xs opacity-80 mb-1">Ваш баланс в Hold</div>
+                            <div class="text-3xl font-black">280 500 ₸</div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-2xl border border-gray-100 flex items-center justify-between">
+                                <div class="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center"><i class="fas fa-laptop text-xs"></i></div>
+                                <div class="flex-1 px-3">
+                                    <div class="text-xs font-bold">MacBook Air</div>
+                                    <div class="text-[10px] text-green-500 font-bold">Проверка товара</div>
+                                </div>
+                                <div class="text-sm font-black">250k ₸</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section id="trust" class="max-w-7xl mx-auto px-6 py-24 border-t border-white/5">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black mb-4">Почему нам доверяют</h2>
+            <p class="text-gray-400">Мы объединили закон и технологии для вашей уверенности</p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="trust-badge p-8 rounded-3xl text-center">
+                <div class="w-14 h-14 bg-indigo-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-landmark text-2xl text-indigo-400"></i>
+                </div>
+                <h4 class="font-bold mb-2">Лицензия</h4>
+                <p class="text-xs text-gray-500">Работаем в соответствии с финансовым законодательством РК.</p>
+            </div>
+            <div class="trust-badge p-8 rounded-3xl text-center">
+                <div class="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-file-contract text-2xl text-green-400"></i>
+                </div>
+                <h4 class="font-bold mb-2">Юр. защита</h4>
+                <p class="text-xs text-gray-500">Каждая сделка — это цифровой договор с полной юр. силой.</p>
+            </div>
+            <div class="trust-badge p-8 rounded-3xl text-center">
+                <div class="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-user-shield text-2xl text-amber-400"></i>
+                </div>
+                <h4 class="font-bold mb-2">Арбитраж</h4>
+                <p class="text-xs text-gray-500">В случае спора наши эксперты помогут решить ситуацию за 24ч.</p>
+            </div>
+            <div class="trust-badge p-8 rounded-3xl text-center">
+                <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-clock text-2xl text-blue-400"></i>
+                </div>
+                <h4 class="font-bold mb-2">Hold 90 дней</h4>
+                <p class="text-xs text-gray-500">Максимально длинный период защиты для сложных услуг.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="bg-white text-[#0a2540] py-32 rounded-[60px] mx-4 mb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black mb-4">Честные тарифы</h2>
+                <p class="text-gray-500 text-lg">Вы платите только за безопасность. Без скрытых подписок.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Tariff 1 -->
+                <div class="bg-gray-50 rounded-[40px] p-10 border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="text-indigo-600 font-bold mb-4 uppercase tracking-widest text-xs">Старт</div>
+                        <div class="text-4xl font-black mb-2">599 ₸</div>
+                        <div class="text-sm text-gray-400 mb-8 font-medium">Для сделок до 100 000 ₸</div>
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-center space-x-3 text-sm font-semibold">
+                                <i class="fas fa-check text-indigo-600"></i>
+                                <span>Цифровой договор</span>
+                            </li>
+                            <li class="flex items-center space-x-3 text-sm font-semibold">
+                                <i class="fas fa-check text-indigo-600"></i>
+                                <span>Hold до 90 дней</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold">Выбрать</button>
+                </div>
+
+                <!-- Tariff 2 (Popular) -->
+                <div class="bg-white rounded-[40px] p-10 border-2 border-indigo-600 shadow-2xl scale-105 relative flex flex-col justify-between">
+                    <div class="absolute top-0 right-10 -translate-y-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase">Популярный</div>
+                    <div>
+                        <div class="text-indigo-600 font-bold mb-4 uppercase tracking-widest text-xs">Медиум</div>
+                        <div class="text-4xl font-black mb-2">999 ₸</div>
+                        <div class="text-sm text-gray-400 mb-8 font-medium">Сделки от 100k до 500k ₸</div>
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-center space-x-3 text-sm font-semibold text-gray-700">
+                                <i class="fas fa-check text-indigo-600"></i>
+                                <span>Все функции Старта</span>
+                            </li>
+                            <li class="flex items-center space-x-3 text-sm font-semibold text-gray-700">
+                                <i class="fas fa-check text-indigo-600"></i>
+                                <span>Приоритетный Арбитраж</span>
+                            </li>
+                            <li class="flex items-center space-x-3 text-sm font-semibold text-gray-700">
+                                <i class="fas fa-check text-indigo-600"></i>
+                                <span>Поддержка 24/7</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold">Выбрать</button>
+                </div>
+
+                <!-- Tariff 3 -->
+                <div class="bg-gray-50 rounded-[40px] p-10 border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="text-indigo-600 font-bold mb-4 uppercase tracking-widest text-xs">Максимум</div>
+                        <div class="text-4xl font-black mb-2">1 999 ₸</div>
+                        <div class="text-sm text-gray-400 mb-8 font-medium">Сделки свыше 500 000 ₸</div>
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-center space-x-3 text-sm font-semibold">
+                                <i class="fas fa-check text-indigo-600"></i>
+                                <span>VIP сопровождение</span>
+                            </li>
+                            <li class="flex items-center space-x-3 text-sm font-semibold">
+                                <i class="fas fa-check text-indigo-600"></i>
+                                <span>Кастомные условия Hold</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold">Выбрать</button>
+                </div>
+            </div>
+            
+            <p class="text-center mt-12 text-sm text-gray-400 font-medium italic">
+                * Комиссия оплачивается один раз при создании сделки и включает все налоги.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="max-w-7xl mx-auto px-6 py-20 text-center">
+        <div class="text-2xl font-black mb-8 italic">SENIM</div>
+        <div class="flex justify-center space-x-8 text-gray-500 text-sm mb-12">
+            <a href="#" class="hover:text-white transition">Политика конфиденциальности</a>
+            <a href="#" class="hover:text-white transition">Публичная оферта</a>
+            <a href="#" class="hover:text-white transition">Контакты</a>
+        </div>
+        <p class="text-gray-600 text-[10px] uppercase tracking-widest font-bold">© 2026 SENIM ESCROW KAZAKHSTAN. ВСЕ ПРАВА ЗАЩИЩЕНЫ.</p>
+    </footer>
+
+</body>
+</html>
